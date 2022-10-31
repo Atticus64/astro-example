@@ -1,0 +1,43 @@
+---
+const {frontmatter} = Astro.props;
+---
+<html>
+  <title>{frontmatter.title}</title>  
+  <h1>{frontmatter.title}</h1>
+  <h2>Post author: {frontmatter.author}</h2>
+  <p>{frontmatter.description}</p>
+  <nav>
+    <a href="/">Home</a>
+  </nav>
+  <slot /> 
+</html>
+
+<style is:global>
+
+    :root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+    a {
+        padding: 10px;
+        color: #000;
+        text-decoration: none;
+        border: 1px solid #000;
+        transition: all 0.3s;
+    }
+
+    a:hover {
+        background-color: cornflowerblue;
+        border: 1px solid #0000;
+    }
+
+</style>
