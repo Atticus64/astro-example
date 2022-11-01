@@ -4,16 +4,28 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+import { SEO } from "astro-seo";
 ---
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
-		<meta charset="UTF-8" />
+		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<SEO 
+			description="Artículos sobre Desarrollo Web, Frontend, Backend, Python, JavaScript ☕️, Vuejs , CSS 🎨 y Performance Web ⚡️ y Devops con Docker 🐋"
+			canonical="https://ejemplo-astro.netlify.app/"
+		/>
+		<meta property="og:description" content="Artículos sobre Desarrollo Web, Frontend, Backend, Python, JavaScript ☕️, Vuejs , CSS 🎨 y Performance Web ⚡️ y Devops con Docker 🐋">
+		<meta property="og:title" content="Ejemplo de Astro | Frontend, JavaScript, Vuejs, CSS, Backend">
+		<meta property="og:site_name" content="ejemplo-astro.netlify.app">
+		<meta property="og:url" content="https://ejemplo-astro.netlify.app/">
+		<meta property="og:type" content="website">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="generator" content={Astro.generator} />
 	</head>
 	<body>
 		<slot />
